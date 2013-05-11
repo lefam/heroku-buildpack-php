@@ -59,7 +59,7 @@ ln -s /app/php/bin/php bin/php
 pushd $BUILD_DIR/www
 
 # lefam: install composer
-echo "-----> Installing composer
+echo "-----> Installing composer"
 curl -sS https://getcomposer.org/installer | php
 
 # lefam: load symfony vendor stuff
