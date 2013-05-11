@@ -56,7 +56,7 @@ mkdir -p bin
 ln -s /app/php/bin/php bin/php
 
 # lefam
-push /app/www
+pushd /app/www
 
 # lefam: install composer
 echo "-----> Installing composer
