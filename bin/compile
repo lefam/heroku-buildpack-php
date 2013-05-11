@@ -62,8 +62,11 @@ pushd $BUILD_DIR/www
 echo "-----> Installing composer"
 curl -sS https://getcomposer.org/installer | php
 
+# lefam
+cp $LP_DIR/parameters.yml $BUILD_DIR/www/app/config
+
 # lefam: load symfony vendor stuff
-php composer.phar install
+$BUILD_DIR/app/bin/php composer.phar install
 
 #lefam
 popd
