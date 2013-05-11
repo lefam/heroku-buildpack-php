@@ -1,0 +1,15 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     us-cdbr-east-03.cleardb.com
+    database_port:     ~
+    database_name:     heroku_5dbf08b8c184254
+    database_user:     b8219e8d7b6e4b
+    database_password: 1522e841
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt
