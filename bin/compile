@@ -55,6 +55,19 @@ cp $LP_DIR/conf/php.ini php
 mkdir -p bin
 ln -s /app/php/bin/php bin/php
 
+# lefam
+push /app/www
+
+# lefam: install composer
+echo "-----> Installing composer
+curl -sS https://getcomposer.org/installer | php
+
+# lefam: load symfony vendor stuff
+php composer.phar install
+
+#lefam
+popd
+
 cat >>boot.sh <<EOF
 for var in \`env|cut -f1 -d=\`; do
   echo "PassEnv \$var" >> /app/apache/conf/httpd.conf;
