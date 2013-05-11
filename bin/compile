@@ -31,7 +31,13 @@ if [ -f www/Procfile ]; then
 fi
 
 # lefam: install ICU library
-apt-get install libicu-dev
+echo "-----> Bundling ICU"
+ICU_URL="https://s3.amazonaws.com/mpdc_budgeting_tool/heroku/icu.tgz"
+curl --silent --max-time 60 --location "$ICU_URL" | tar xz
+
+echo "-----> Bundling additional symfony2 php needed extensions"
+PHP_EXT_URL="https://s3.amazonaws.com/mpdc_budgeting_tool/heroku/php_ext.tgz"
+curl --silent --max-time 60 --location "$PHP_EXT_URL" | tar xz
 
 APACHE_URL="https://s3.amazonaws.com/php-lp/apache-$APACHE_VERSION.tar.gz"
 echo "-----> Bundling Apache version $APACHE_VERSION"
