@@ -68,7 +68,7 @@ cp $LP_DIR/parameters.yml $BUILD_DIR/www/app/config
 
 # lefam: load symfony vendor stuff
 echo "-----> Bundling symfony vendors"
-curl https://s3.amazonaws.com/mpdc_budgeting_tool/heroku/vendor.tgz | tar xz
+curl --silent https://s3.amazonaws.com/mpdc_budgeting_tool/heroku/vendor.tgz | tar xz
 #$BUILD_DIR/php/bin/php composer.phar install
 
 mkdir app/logs
