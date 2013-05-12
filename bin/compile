@@ -78,7 +78,7 @@ chmod 777 app/cache
 mv app/config/heroku_parameters.yml app/config/parameters.yml
 
 echo "-----> Generating database"
-$BUILD_DIR/php/bin/php app/console doctrine:database:create
+#$BUILD_DIR/php/bin/php app/console doctrine:database:create
 $BUILD_DIR/php/bin/php app/console doctrine:schema:update --force
 
 #lefam
