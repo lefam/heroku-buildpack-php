@@ -63,8 +63,6 @@ echo "-----> Installing composer"
 export LD_LIBRARY_PATH=$BUILD_DIR/php/ext
 curl -sS https://getcomposer.org/installer | $BUILD_DIR/php/bin/php
 
-# lefam
-cp $LP_DIR/parameters.yml $BUILD_DIR/www/app/config
 
 # lefam: load symfony vendor stuff
 echo "-----> Bundling symfony vendors"
@@ -75,6 +73,13 @@ mkdir app/logs
 mkdir app/cache
 chmod 777 app/logs
 chmod 777 app/cache
+
+# lefam
+mv $BUILD_DIR/www/config/heroku_parameters.yml $BUILD_DIR/www/app/config/parameters.yml
+
+echo "-----> Generating database"
+$BUILD_DIR/php/bin/php app/console doctrine:database:create
+$BUILD_DIR/php/bin/php app/console doctrine:schema:update --force
 
 #lefam
 popd
