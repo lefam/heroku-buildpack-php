@@ -71,6 +71,11 @@ echo "-----> Bundling symfony vendors"
 curl https://s3.amazonaws.com/mpdc_budgeting_tool/heroku/vendor.tgz | tar xz
 #$BUILD_DIR/php/bin/php composer.phar install
 
+mkdir app/logs
+mkdir app/cache
+chmod 777 app/logs
+chmod 777 app/cache
+
 #lefam
 popd
 
