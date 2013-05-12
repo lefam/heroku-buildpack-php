@@ -3,8 +3,8 @@ parameters:
     database_host:     us-cdbr-east-03.cleardb.com
     database_port:     ~
     database_name:     heroku_5dbf08b8c184254
-    database_user:     b8219e8d7b6e4b
-    database_password: 1522e841
+    database_user:     ~
+    database_password: ~
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
