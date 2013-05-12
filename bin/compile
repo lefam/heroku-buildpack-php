@@ -60,13 +60,16 @@ pushd $BUILD_DIR/www
 
 # lefam: install composer
 echo "-----> Installing composer"
+export LD_LIBRARY_PATH=$BUILD_DIR/php/ext
 curl -sS https://getcomposer.org/installer | $BUILD_DIR/php/bin/php
 
 # lefam
 cp $LP_DIR/parameters.yml $BUILD_DIR/www/app/config
 
 # lefam: load symfony vendor stuff
-$BUILD_DIR/php/bin/php composer.phar install
+echo "-----> Bundling symfony vendors"
+curl https://s3.amazonaws.com/mpdc_budgeting_tool/heroku/vendor.tgz | tar xz
+#$BUILD_DIR/php/bin/php composer.phar install
 
 #lefam
 popd
